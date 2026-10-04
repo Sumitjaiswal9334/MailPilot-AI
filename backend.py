@@ -44,7 +44,7 @@ GMAIL_SCOPES = [
 ]
 GMAIL_AUTH_STATE: str | None = None
 PROVIDER = os.getenv("EMAIL_PROVIDER", "gemini").lower()
-GEMINI_MODEL = os.getenv("GEMINI_MODEL", "gemini-3-flash")
+GEMINI_MODEL = os.getenv("GEMINI_MODEL", "gemini-3.8-flash")
 
 
 class MailState(TypedDict, total=False):
