@@ -1,0 +1,6 @@
+.env
+mailpilot.db
+gmail_token.json
+__pycache__/
+*.pyc
+.venv/
