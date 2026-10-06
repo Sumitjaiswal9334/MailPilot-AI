@@ -108,7 +108,7 @@ def _gemini() -> ChatGoogleGenerativeAI:
         google_api_key=key,
         temperature=0,
         timeout=45,
-        max_retries=0,
+        max_retries=2,
     )
 
 
