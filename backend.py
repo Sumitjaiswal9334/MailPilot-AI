@@ -44,7 +44,7 @@ GMAIL_SCOPES = [
 ]
 GMAIL_AUTH_STATE: str | None = None
 PROVIDER = os.getenv("EMAIL_PROVIDER", "gemini").lower()
-GEMINI_MODEL = os.getenv("GEMINI_MODEL", "gemini-3.8-flash")
+GEMINI_MODEL = os.getenv("GEMINI_MODEL", "gemini-3.5-flash-lite")
 
 
 class MailState(TypedDict, total=False):
@@ -393,7 +393,7 @@ def gmail_status() -> dict[str, str | bool]:
 
 
 @app.post("/gmail/sync")
-def gmail_sync(limit: int = 20) -> dict[str, int]:
+def gmail_sync(limit: int = 5) -> dict[str, int]:
     limit = max(1, min(limit, 50))
     listing = _gmail_request(
         "GET", "messages", params={"labelIds": "INBOX", "maxResults": limit}
