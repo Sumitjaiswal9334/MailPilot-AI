@@ -229,7 +229,7 @@ with st.sidebar:
     if connected:
         if st.button("↻  Sync Gmail inbox", use_container_width=True, type="primary"):
             with st.spinner("Syncing Gmail and processing new messages…"):
-                ok, payload = post_json("/gmail/sync?limit=20", timeout=100)
+                ok, payload = post_json("/gmail/sync?limit=5", timeout=100)
             if ok:
                 st.success(f"Sync complete · {payload.get('imported', 0)} new email(s) imported")
                 st.rerun()
